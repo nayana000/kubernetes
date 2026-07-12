@@ -1,0 +1,33 @@
+#create Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myappdeploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: myapp
+          image: nayana000/new:v1.0
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cisvc
+spec:
+  type: ClusterIP
+  selector:
+    app: ipapp
+  ports:
+    - name: http
+      port: 30000 # service port
+      targetPort: 8080 # application port

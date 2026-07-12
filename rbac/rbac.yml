@@ -1,0 +1,15 @@
+#service account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: mysa
+
+---
+
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysatocken
+  annotations:
+    
