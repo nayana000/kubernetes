@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         app: mynginx
-  spec:
+    spec:
     containers:
       - name: nginx
         image: nginx
