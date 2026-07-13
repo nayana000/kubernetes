@@ -37,8 +37,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: mysa
-  apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole
-  name: secret-reader
+  name: mysacrole
   apiGroup: rbac.authorization.k8s.io
