@@ -6,10 +6,39 @@ metadata:
 
 ---
 
-
+#tocken
 apiVersion: v1
 kind: Secret
 metadata:
   name: mysatocken
   annotations:
-    
+    kubernetes.io/service-account.name: "mysa"
+type: kubernetes.io/service-account-token
+
+---
+
+#role(cluster role)
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: mysacrole
+rules:
+- apiGroups: [""]
+  resources: ["pods", "services"]
+  verbs: ["get", "list"]
+
+---
+
+#cluster role binding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: mysacrolebinding
+subjects:
+- kind: ServiceAccount
+  name: mysa
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: secret-reader
+  apiGroup: rbac.authorization.k8s.io
