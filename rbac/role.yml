@@ -6,7 +6,7 @@ metadata:
   namespace: default
 rules:
 - apiGroups: [""]
-  resources: ["pods"]
+  resources: ["pods", "service"]
   verbs: ["get", "list"]
 
 ---
