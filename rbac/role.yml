@@ -1,0 +1,26 @@
+#role(role)
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: mysarole
+  namespace: default
+rules:
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list"]
+
+---
+
+#role binding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: mysarolebinding
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: mysa
+roleRef:
+  kind: Role
+  name: mysacrole
+  apiGroup: rbac.authorization.k8s.io

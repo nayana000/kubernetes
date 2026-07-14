@@ -1,22 +1,3 @@
-#service account
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: mysa
-
----
-
-#tocken
-apiVersion: v1
-kind: Secret
-metadata:
-  name: mysatocken
-  annotations:
-    kubernetes.io/service-account.name: "mysa"
-type: kubernetes.io/service-account-token
-
----
-
 #role(cluster role)
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
