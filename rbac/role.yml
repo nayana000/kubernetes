@@ -22,5 +22,5 @@ subjects:
   name: mysa
 roleRef:
   kind: Role
-  name: mysacrole
+  name: mysarole
   apiGroup: rbac.authorization.k8s.io
