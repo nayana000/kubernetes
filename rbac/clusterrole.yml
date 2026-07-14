@@ -18,6 +18,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: mysa
+  namespace: default
 roleRef:
   kind: ClusterRole
   name: mysacrole
