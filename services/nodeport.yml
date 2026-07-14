@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: myapp
-          image: nayana000/new:v1.0
+          image: nayana000/pythonapp:v1
           ports:
             - containerPort: 8080
 ---
