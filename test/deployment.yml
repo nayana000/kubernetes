@@ -10,7 +10,7 @@ spec:
     metadata:
       labels:
         app: myapp
-  spec:
+    spec:
     containers:
       - name: nginx
         image: nginx
