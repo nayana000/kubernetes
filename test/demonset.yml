@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DemonSet
+metadata:
+  name: testdemonset
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+       - name: nginx
+         image: nginx
+         ports:
+          - containerPort: 80
